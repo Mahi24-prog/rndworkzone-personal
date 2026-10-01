@@ -1,0 +1,504 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-size: 14.5px; /* Scaled to simulate 110% zoom of previous 14px */
+  }
+
+  :root {
+    /* Light Theme Variables */
+    --bg-base: #f5f7fa;
+    --text-base: #101828;
+    --bg-gradient:
+      radial-gradient(
+        circle at 10% 15%,
+        rgba(24, 128, 255, 0.05),
+        transparent 30%
+      ),
+      radial-gradient(
+        circle at 90% 35%,
+        rgba(116, 67, 255, 0.05),
+        transparent 32%
+      ),
+      linear-gradient(135deg, #f5f7fa, #eef2f6 55%, #f5f7fa);
+
+    --text-gradient-bg: linear-gradient(
+      90deg,
+      #101828 10%,
+      #129eff 50%,
+      #7545ff 90%
+    );
+    --glass-bg: rgba(255, 255, 255, 0.8);
+
+    --dark-navy: #f5f7fa;
+    --accent-blue: #129eff;
+    --primary-container: #ffffff;
+    --on-surface: #101828;
+    --on-surface-variant: #64748b;
+    --outline-variant: rgba(0, 0, 0, 0.1);
+    --surface-container-highest: #f1f5f9;
+    --surface-container-lowest: #ffffff;
+    --border-slate: #cbd5e1;
+    --primary: #000000;
+  }
+
+  .dark {
+    /* Dark Theme Variables as per provided HTML */
+    --bg-base: #040916;
+    --text-base: #f5f7ff;
+    --bg-gradient:
+      radial-gradient(
+        circle at 10% 15%,
+        rgba(24, 128, 255, 0.13),
+        transparent 30%
+      ),
+      radial-gradient(
+        circle at 90% 35%,
+        rgba(116, 67, 255, 0.12),
+        transparent 32%
+      ),
+      linear-gradient(135deg, #040916, #081125 55%, #040914);
+
+    --text-gradient-bg: linear-gradient(
+      90deg,
+      #ffffff 10%,
+      #55c8ff 50%,
+      #8c6cff 90%
+    );
+    --glass-bg: rgba(16, 28, 53, 0.72);
+
+    --dark-navy: #040916;
+    --accent-blue: #16a9ff;
+    --primary-container: #081125;
+    --on-surface: #f5f7ff;
+    --on-surface-variant: #a8b5ca;
+    --outline-variant: rgba(123, 150, 220, 0.18);
+    --surface-container-highest: rgba(22, 38, 70, 0.9);
+    --surface-container-lowest: #050a16;
+    --border-slate: rgba(123, 150, 220, 0.18);
+    --primary: #ffffff;
+  }
+
+  body {
+    @apply text-on-surface font-body-md dark:text-white transition-colors duration-300;
+    background: var(--bg-gradient);
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .dark .glass {
+    background: rgba(19, 27, 46, 0.8);
+  }
+  .text-gradient {
+    background: linear-gradient(to right, #3b82f6, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .shadow-soft {
+    box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08);
+  }
+  .mask-fade-out {
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  }
+
+  .cta-gradient {
+    background:
+      radial-gradient(
+        circle at 85% 50%,
+        rgba(105, 72, 255, 0.08),
+        transparent 35%
+      ),
+      linear-gradient(120deg, #f0f4ff, #f8faff);
+    border-color: rgba(105, 126, 255, 0.2);
+  }
+  .dark .cta-gradient {
+    background:
+      radial-gradient(
+        circle at 85% 50%,
+        rgba(105, 72, 255, 0.22),
+        transparent 35%
+      ),
+      linear-gradient(120deg, rgba(16, 35, 72, 0.8), rgba(8, 17, 37, 0.9));
+    border-color: rgba(105, 126, 255, 0.25);
+  }
+
+  /* Core button gradients as requested */
+  .bg-accent-blue {
+    background: linear-gradient(90deg, #129eff, #7545ff) !important;
+  }
+  .hover\:bg-blue-600:hover {
+    background: linear-gradient(90deg, #168cff, #7641ff) !important;
+  }
+
+  /* Custom Scrollbar for scrollable grids */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1; /* border-slate */
+    border-radius: 20px;
+  }
+  .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #45464d; /* on-surface-variant */
+  }
+
+  /* Floating Label Styles */
+  .floating-input:focus ~ .floating-label,
+  .floating-input:not(:placeholder-shown) ~ .floating-label {
+    transform: translateY(-1.5rem) scale(0.85);
+    color: #0051d5; /* secondary color */
+  }
+  .dark .floating-input:focus ~ .floating-label,
+  .dark .floating-input:not(:placeholder-shown) ~ .floating-label {
+    color: #b4c5ff; /* secondary-fixed-dim */
+  }
+
+  /* HTML Match: Base section backgrounds using the global gradient */
+  .bg-dark-navy {
+    background: var(--bg-gradient) !important;
+  }
+  .bg-background {
+    background: var(--bg-gradient) !important;
+  }
+
+  .dark .bg-gradient-alt {
+    background:
+      radial-gradient(
+        circle at 85% 50%,
+        rgba(116, 67, 255, 0.06),
+        transparent 35%
+      ),
+      radial-gradient(
+        circle at 15% 50%,
+        rgba(24, 128, 255, 0.08),
+        transparent 35%
+      ),
+      linear-gradient(135deg, #060d1f, #09152b 55%, #050a16) !important;
+  }
+
+  /* HTML Match: FAQ glowing orbs */
+  #faq {
+    position: relative;
+    overflow: hidden;
+  }
+  #faq > div {
+    position: relative;
+    z-index: 10;
+  }
+  #faq::before,
+  #faq::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  #faq::before {
+    width: 450px;
+    height: 450px;
+    top: -180px;
+    left: -180px;
+    background: var(--accent-blue);
+    opacity: 0.04;
+    filter: blur(100px);
+  }
+  .dark #faq::before {
+    opacity: 0.08;
+  }
+  #faq::after {
+    width: 500px;
+    height: 500px;
+    right: -200px;
+    top: 30%;
+    background: #7654ff;
+    opacity: 0.04;
+    filter: blur(120px);
+  }
+  .dark #faq::after {
+    opacity: 0.08;
+  }
+
+  /* HTML Match: Footer gradient */
+  footer {
+    background:
+      radial-gradient(
+        circle at 85% 15%,
+        rgba(63, 88, 255, 0.05),
+        transparent 28%
+      ),
+      radial-gradient(
+        circle at 15% 70%,
+        rgba(117, 55, 255, 0.03),
+        transparent 30%
+      ),
+      linear-gradient(135deg, #f5f7fa, #ffffff 70%) !important;
+  }
+  .dark footer {
+    background:
+      radial-gradient(
+        circle at 85% 15%,
+        rgba(63, 88, 255, 0.18),
+        transparent 28%
+      ),
+      radial-gradient(
+        circle at 15% 70%,
+        rgba(117, 55, 255, 0.12),
+        transparent 30%
+      ),
+      linear-gradient(135deg, #071021, #020712 70%) !important;
+  }
+}
+
+/* =========================
+   FAQ SECTION (Custom HTML Match)
+========================= */
+
+.faq-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 55px;
+}
+
+.faq-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 15px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #129eff;
+  background: rgba(18, 158, 255, 0.1);
+  border: 1px solid rgba(18, 158, 255, 0.2);
+  box-shadow: 0 0 20px rgba(18, 158, 255, 0.1);
+  margin-bottom: 20px;
+}
+.dark .faq-badge {
+  color: #73cfff;
+  background: rgba(24, 169, 255, 0.08);
+  border: 1px solid rgba(24, 169, 255, 0.25);
+  box-shadow: 0 0 25px rgba(24, 169, 255, 0.08);
+}
+.faq-badge::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  background: #21c4ff;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #21c4ff;
+}
+
+.faq-header h1 {
+  font-size: clamp(38px, 5vw, 62px);
+  line-height: 1.05;
+  letter-spacing: -2.5px;
+  margin-bottom: 18px;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #101828 10%, #129eff 50%, #7545ff 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.dark .gradient-text {
+  background: linear-gradient(90deg, #ffffff 10%, #55c8ff 50%, #8c6cff 90%);
+  -webkit-background-clip: text;
+}
+
+.faq-subtitle {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--on-surface-variant);
+  margin-bottom: 14px;
+}
+.dark .faq-subtitle {
+  color: #d4dced;
+}
+
+.header-description {
+  max-width: 680px;
+  margin: auto;
+  color: var(--on-surface-variant);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.faq-item {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+  border-radius: 18px;
+  background: var(--surface-container-lowest);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.dark .faq-item {
+  border-color: rgba(123, 150, 220, 0.18);
+  background: linear-gradient(
+    135deg,
+    rgba(17, 31, 58, 0.78),
+    rgba(8, 17, 35, 0.88)
+  );
+  backdrop-filter: blur(15px);
+}
+
+.faq-item:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-blue);
+  background: var(--surface-container-highest);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+.dark .faq-item:hover {
+  border-color: rgba(44, 167, 255, 0.38);
+  background: rgba(22, 38, 70, 0.9);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
+}
+
+.faq-item.active {
+  border-color: var(--accent-blue);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+.dark .faq-item.active {
+  border-color: rgba(75, 118, 255, 0.5);
+  box-shadow:
+    0 18px 55px rgba(0, 0, 0, 0.3),
+    0 0 35px rgba(57, 100, 255, 0.07);
+}
+
+.faq-question {
+  width: 100%;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  padding: 23px 25px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  text-align: left;
+  color: var(--primary);
+  background: transparent;
+  font-family: inherit;
+}
+.dark .faq-question {
+  color: white;
+}
+
+.question-number {
+  flex: none;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #129eff;
+  background: rgba(18, 158, 255, 0.1);
+  border: 1px solid rgba(18, 158, 255, 0.2);
+}
+.dark .question-number {
+  color: #69c8ff;
+  background: rgba(24, 169, 255, 0.08);
+  border: 1px solid rgba(24, 169, 255, 0.18);
+}
+
+.question-text {
+  flex: 1;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.question-icon {
+  flex: none;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--on-surface-variant);
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  font-size: 20px;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease,
+    background 0.3s ease;
+}
+.dark .question-icon {
+  color: #8da5ca;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.faq-item.active .question-icon {
+  transform: rotate(45deg);
+  color: white;
+  background: linear-gradient(135deg, #129eff, #7545ff);
+  border-color: transparent;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.answer-inner {
+  padding: 0 25px 25px 81px;
+  color: var(--on-surface-variant);
+  font-size: 14px;
+  line-height: 1.85;
+  max-width: 950px;
+}
+
+.answer-inner::before {
+  content: "";
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(18, 158, 255, 0.2), transparent);
+  margin-bottom: 18px;
+}
+.dark .answer-inner::before {
+  background: linear-gradient(90deg, rgba(80, 140, 255, 0.3), transparent);
+}
+
+/* PhoneInput custom styles */
+.PhoneInputInput {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  color: inherit !important;
+  width: 100%;
+  height: 100%;
+}
+.PhoneInputInput:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.PhoneInputCountry {
+  margin-right: 0.75rem;
+}

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OnlineWorkCentre - Authentication</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Sora:wght@400;600&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed-variant": "#003ea8",
+                      "primary-fixed": "#dae2fd",
+                      "tertiary": "#000000",
+                      "secondary-fixed-dim": "#b4c5ff",
+                      "tertiary-container": "#2a1700",
+                      "on-primary": "#ffffff",
+                      "surface-dim": "#d8dadc",
+                      "outline-variant": "#c6c6cd",
+                      "surface-container-high": "#e6e8ea",
+                      "secondary-fixed": "#dbe1ff",
+                      "border-slate": "#CBD5E1",
+                      "primary": "#000000",
+                      "secondary": "#0051d5",
+                      "error": "#ba1a1a",
+                      "tertiary-fixed": "#ffddb8",
+                      "surface-container-low": "#f2f4f6",
+                      "error-container": "#ffdad6",
+                      "success-emerald": "#10B981",
+                      "on-surface-variant": "#45464d",
+                      "on-secondary": "#ffffff",
+                      "on-secondary-container": "#fefcff",
+                      "inverse-on-surface": "#eff1f3",
+                      "surface-container-highest": "#e0e3e5",
+                      "dark-navy": "#0B1120",
+                      "background": "#f7f9fb",
+                      "on-primary-fixed": "#131b2e",
+                      "tertiary-fixed-dim": "#ffb95f",
+                      "on-error-container": "#93000a",
+                      "on-primary-fixed-variant": "#3f465c",
+                      "surface": "#f7f9fb",
+                      "on-primary-container": "#7c839b",
+                      "surface-glass": "rgba(255, 255, 255, 0.7)",
+                      "on-secondary-fixed": "#00174b",
+                      "primary-fixed-dim": "#bec6e0",
+                      "on-tertiary-fixed-variant": "#653e00",
+                      "primary-container": "#131b2e",
+                      "on-background": "#191c1e",
+                      "inverse-primary": "#bec6e0",
+                      "on-tertiary-fixed": "#2a1700",
+                      "inverse-surface": "#2d3133",
+                      "on-tertiary-container": "#b87500",
+                      "surface-container": "#eceef0",
+                      "text-muted": "#64748B",
+                      "surface-variant": "#e0e3e5",
+                      "outline": "#76777d",
+                      "on-surface": "#191c1e",
+                      "surface-tint": "#565e74",
+                      "on-error": "#ffffff",
+                      "secondary-container": "#316bf3",
+                      "surface-bright": "#f7f9fb",
+                      "surface-container-lowest": "#ffffff",
+                      "accent-blue": "#3B82F6",
+                      "on-tertiary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "section-gap-lg": "120px",
+                      "margin-mobile": "20px",
+                      "section-gap-md": "80px",
+                      "stack-md": "24px",
+                      "gutter": "32px",
+                      "stack-sm": "12px",
+                      "stack-lg": "48px",
+                      "container-max": "1280px"
+              },
+              "fontFamily": {
+                      "label-lg": ["Sora"],
+                      "body-md": ["Inter"],
+                      "display-lg-mobile": ["Space Grotesk"],
+                      "headline-xl": ["Space Grotesk"],
+                      "headline-lg": ["Space Grotesk"],
+                      "label-md": ["Sora"],
+                      "display-lg": ["Space Grotesk"],
+                      "body-sm": ["Inter"],
+                      "headline-md": ["Space Grotesk"],
+                      "button-text": ["Sora"],
+                      "body-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "label-lg": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "headline-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "label-md": ["12px", {"lineHeight": "1", "letterSpacing": "0.03em", "fontWeight": "600"}],
+                      "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "button-text": ["15px", {"lineHeight": "1", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        /* Ambient Background Animations */
+        @keyframes float {
+            0% { transform: translateY(0px) scale(1); opacity: 0.3; }
+            50% { transform: translateY(-20px) scale(1.05); opacity: 0.5; }
+            100% { transform: translateY(0px) scale(1); opacity: 0.3; }
+        }
+        .ambient-blob {
+            position: absolute;
+            filter: blur(80px);
+            border-radius: 50%;
+            z-index: 0;
+            animation: float 10s ease-in-out infinite;
+        }
+        
+        /* Glassmorphism Utilities */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        .dark .glass-panel {
+            background: rgba(11, 17, 32, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Smooth View Transitions */
+        .auth-view {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .auth-view.hidden-view {
+            opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            transform: translateY(10px);
+        }
+        .auth-view.active-view {
+            opacity: 1;
+            pointer-events: auto;
+            position: relative;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-background dark:bg-dark-navy text-on-surface dark:text-surface-lowest antialiased min-h-screen flex items-center justify-center relative overflow-hidden transition-colors duration-300">
+<!-- Ambient Background Lighting -->
+<div class="ambient-blob w-[40vw] h-[40vw] bg-secondary/10 dark:bg-secondary/20 top-[-10%] left-[-10%]"></div>
+<div class="ambient-blob w-[30vw] h-[30vw] bg-accent-blue/10 dark:bg-accent-blue/15 bottom-[-5%] right-[-5%]" style="animation-delay: -5s;"></div>
+<!-- Main Container -->
+<main class="w-full max-w-[440px] px-margin-mobile relative z-10">
+<!-- Logo Area -->
+<div class="flex justify-center mb-stack-md">
+<div class="w-16 h-16 rounded-xl bg-surface-container-lowest shadow-sm dark:bg-surface flex items-center justify-center p-2">
+<img alt="OnlineWorkCentre Logo" class="w-full h-full object-contain rounded-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBG-96HN9WScQrKBDG6qpQSa26FxxnKcJd0JzHP_c5iNtatIuRLCfvzEWC_7g4enD23qTxXyPDyMolcduaOb51mbQQhoyj_dDTvhfHY1J6MooYljvtRIYlS6MZATmz2ivCmg_kiUk5cFMCWaCv7N8L7b8Xetnw8EwDGojH9YS0j6jgqtVaYoSVhOf17b1NikGpV7j_RpxWUz9Fla5WAtKUYWnnER7qOdRY2X0YTtSL-9_GPZDub5Vtmw"/>
+</div>
+</div>
+<!-- Auth Card -->
+<div class="glass-panel rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] dark:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] p-stack-lg relative overflow-hidden">
+<!-- AI Progress Indicator Line (Decorative) -->
+<div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-secondary to-transparent opacity-50"></div>
+<!-- Sign In View -->
+<div class="auth-view active-view" id="signin-view">
+<div class="text-center mb-stack-md">
+<h1 class="font-headline-md text-headline-md text-on-surface dark:text-surface-lowest mb-2">Welcome back</h1>
+<p class="font-body-sm text-body-sm text-text-muted">Enter your details to access your workspace.</p>
+</div>
+<!-- Social Logins -->
+<div class="space-y-stack-sm mb-stack-md">
+<button class="w-full flex items-center justify-center gap-3 py-2.5 px-4 rounded-lg border-[1.5px] border-border-slate dark:border-surface-tint bg-transparent hover:bg-surface-container-low dark:hover:bg-inverse-surface transition-colors duration-200">
+<span class="material-symbols-outlined text-[20px]">account_circle</span>
+<span class="font-button-text text-button-text">Continue with Google</span>
+</button>
+<button class="w-full flex items-center justify-center gap-3 py-2.5 px-4 rounded-lg border-[1.5px] border-border-slate dark:border-surface-tint bg-transparent hover:bg-surface-container-low dark:hover:bg-inverse-surface transition-colors duration-200">
+<span class="material-symbols-outlined text-[20px]">work</span>
+<span class="font-button-text text-button-text">Continue with LinkedIn</span>
+</button>
+</div>
+<!-- Divider -->
+<div class="relative flex items-center py-2 mb-stack-md">
+<div class="flex-grow border-t border-border-slate dark:border-surface-tint"></div>
+<span class="flex-shrink-0 mx-4 font-label-md text-label-md text-text-muted uppercase tracking-wider">or email</span>
+<div class="flex-grow border-t border-border-slate dark:border-surface-tint"></div>
+</div>
+<!-- Form -->
+<form class="space-y-stack-md" onsubmit="event.preventDefault();">
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface dark:text-surface-lowest" for="email">Email Address</label>
+<input class="w-full px-4 py-3 rounded-lg border-[1.5px] border-border-slate dark:border-surface-tint bg-surface-container-lowest dark:bg-dark-navy/50 text-on-surface dark:text-surface-lowest font-body-sm text-body-sm focus:outline-none focus:border-secondary focus:ring-4 focus:ring-secondary/10 transition-all placeholder:text-outline-variant" id="email" placeholder="name@company.com" type="email"/>
+</div>
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<label class="block font-label-md text-label-md text-on-surface dark:text-surface-lowest" for="password">Password</label>
+<a class="font-label-md text-label-md text-secondary hover:text-secondary-container transition-colors" href="#">Forgot?</a>
+</div>
+<input class="w-full px-4 py-3 rounded-lg border-[1.5px] border-border-slate dark:border-surface-tint bg-surface-container-lowest dark:bg-dark-navy/50 text-on-surface dark:text-surface-lowest font-body-sm text-body-sm focus:outline-none focus:border-secondary focus:ring-4 focus:ring-secondary/10 transition-all placeholder:text-outline-variant" id="password" placeholder="••••••••" type="password"/>
+</div>
+<button class="w-full py-3 px-4 rounded-lg bg-gradient-to-r from-secondary to-accent-blue text-on-primary font-button-text text-button-text shadow-[0_4px_14px_0_rgba(59,130,246,0.3)] hover:shadow-[0_6px_20px_rgba(59,130,246,0.4)] hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2" type="submit">
+<span>Sign In</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</form>
+<p class="mt-stack-lg text-center font-body-sm text-body-sm text-text-muted">
+                    Don't have an account? 
+                    <button class="font-button-text text-secondary hover:text-secondary-container transition-colors ml-1" onclick="toggleAuthView('signup')">Create one</button>
+</p>
+</div>
+<!-- Sign Up View -->
+<div class="auth-view hidden-view" id="signup-view">
+<div class="text-center mb-stack-md">
+<h1 class="font-headline-md text-headline-md text-on-surface dark:text-surface-lowest mb-2">Create an account</h1>
+<p class="font-body-sm text-body-sm text-text-muted">Join the executive network today.</p>
+</div>
+<!-- Form -->
+<form class="space-y-stack-md" onsubmit="event.preventDefault();">
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface dark:text-surface-lowest" for="fname">First Name</label>
+<input class="w-full px-4 py-3 rounded-lg border-[1.5px] border-border-slate dark:border-surface-tint bg-surface-container-lowest dark:bg-dark-navy/50 text-on-surface dark:text-surface-lowest font-body-sm text-body-sm focus:outline-none focus:border-secondary focus:ring-4 focus:ring-secondary/10 transition-all" id="fname" placeholder="Jane" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface dark:text-surface-lowest" for="lname">Last Name</label>
+<input class="w-full px-4 py-3 rounded-lg border-[1.5px] border-border-slate dark:border-surface-tint bg-surface-container-lowest dark:bg-dark-navy/50 text-on-surface dark:text-surface-lowest font-body-sm text-body-sm focus:outline-none focus:border-secondary focus:ring-4 focus:ring-secondary/10 transition-all" id="lname" placeholder="Doe" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface dark:text-surface-lowest" for="signup-email">Work Email</label>
+<input class="w-full px-4 py-3 rounded-lg border-[1.5px] border-border-slate dark:border-surface-tint bg-surface-container-lowest dark:bg-dark-navy/50 text-on-surface dark:text-surface-lowest font-body-sm text-body-sm focus:outline-none focus:border-secondary focus:ring-4 focus:ring-secondary/10 transition-all" id="signup-email" placeholder="name@company.com" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface dark:text-surface-lowest" for="signup-password">Password</label>
+<input class="w-full px-4 py-3 rounded-lg border-[1.5px] border-border-slate dark:border-surface-tint bg-surface-container-lowest dark:bg-dark-navy/50 text-on-surface dark:text-surface-lowest font-body-sm text-body-sm focus:outline-none focus:border-secondary focus:ring-4 focus:ring-secondary/10 transition-all" id="signup-password" placeholder="Min 8 characters" type="password"/>
+</div>
+<button class="w-full py-3 px-4 rounded-lg bg-gradient-to-r from-secondary to-accent-blue text-on-primary font-button-text text-button-text shadow-[0_4px_14px_0_rgba(59,130,246,0.3)] hover:shadow-[0_6px_20px_rgba(59,130,246,0.4)] hover:-translate-y-0.5 transition-all duration-200" type="submit">
+                        Create Account
+                    </button>
+<p class="text-center text-xs text-text-muted mt-4">
+                        By continuing, you agree to our <a class="underline hover:text-on-surface transition-colors" href="#">Terms of Service</a> and <a class="underline hover:text-on-surface transition-colors" href="#">Privacy Policy</a>.
+                    </p>
+</form>
+<p class="mt-stack-lg text-center font-body-sm text-body-sm text-text-muted">
+                    Already have an account? 
+                    <button class="font-button-text text-secondary hover:text-secondary-container transition-colors ml-1" onclick="toggleAuthView('signin')">Sign in</button>
+</p>
+</div>
+</div>
+<!-- Dark Mode Toggle (For demo/testing functionality based on prompt requirements) -->
+<div class="mt-8 flex justify-center">
+<button class="flex items-center gap-2 py-2 px-4 rounded-full bg-surface-container-high dark:bg-surface-tint text-on-surface-variant dark:text-surface-lowest hover:bg-surface-dim transition-colors text-xs font-label-md" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-symbols-outlined text-[16px]">contrast</span>
+                Toggle Theme
+            </button>
+</div>
+</main>
+<script>
+        function toggleAuthView(targetView) {
+            const signinView = document.getElementById('signin-view');
+            const signupView = document.getElementById('signup-view');
+
+            if (targetView === 'signup') {
+                signinView.classList.replace('active-view', 'hidden-view');
+                setTimeout(() => {
+                    signupView.classList.replace('hidden-view', 'active-view');
+                }, 100); // slight delay for smooth cross-fade effect
+            } else {
+                signupView.classList.replace('active-view', 'hidden-view');
+                setTimeout(() => {
+                    signinView.classList.replace('hidden-view', 'active-view');
+                }, 100);
+            }
+        }
+    </script>
+</body></html>

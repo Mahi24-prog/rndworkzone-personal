@@ -1,0 +1,856 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>OnlineWorkCentre | AI-Powered Research &amp; Human-Level Intelligence</title>
+<meta content="OnlineWorkCentre transforms AI-generated chaos into structured intelligence. Human-validated research for high-level executives." name="description">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#00174b",
+                        "primary": "#000000",
+                        "surface-tint": "#565e74",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#dae2fd",
+                        "surface-variant": "#e0e3e5",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "success": "#10B981",
+                        "primary-container": "#131b2e",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#191c1e",
+                        "accent-blue": "#3B82F6",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-primary-container": "#7c839b",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#000000",
+                        "secondary-fixed-dim": "#b4c5ff",
+                        "on-secondary-fixed-variant": "#003ea8",
+                        "on-surface": "#191c1e",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-primary": "#ffffff",
+                        "outline": "#76777d",
+                        "background": "#f7f9fb",
+                        "surface-container-high": "#e6e8ea",
+                        "tertiary-container": "#2a1700",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#c6c6cd",
+                        "on-primary-fixed": "#131b2e",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "surface-container": "#eceef0",
+                        "error": "#EF4444",
+                        "surface-dim": "#d8dadc",
+                        "secondary": "#0051d5",
+                        "on-tertiary-container": "#b87500",
+                        "inverse-surface": "#2d3133",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "on-tertiary-fixed": "#2a1700",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#f7f9fb",
+                        "surface-container-low": "#f2f4f6",
+                        "secondary-fixed": "#dbe1ff",
+                        "pale-blue": "#EFF6FF",
+                        "slate-muted": "#64748B",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#ffddb8",
+                        "on-surface-variant": "#45464d",
+                        "surface": "#f7f9fb",
+                        "secondary-container": "#316bf3",
+                        "border-light": "#CBD5E1",
+                        "inverse-primary": "#bec6e0",
+                        "on-secondary-container": "#fefcff",
+                        "primary-fixed-dim": "#bec6e0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "content-max": "820px",
+                        "section-gap-md": "48px",
+                        "section-gap-lg": "80px",
+                        "component-gap": "16px",
+                        "gutter": "24px",
+                        "stack-sm": "8px",
+                        "container-max": "1100px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Space Grotesk"],
+                        "title-lg": ["Inter"],
+                        "headline-sm": ["Space Grotesk"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Space Grotesk"],
+                        "body-lg": ["Inter"],
+                        "label-caps": ["Space Grotesk"],
+                        "hint": ["Inter"],
+                        "display-lg-mobile": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "title-lg": ["20px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.7", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "hint": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .dark .glass {
+            background: rgba(19, 27, 46, 0.8);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #3B82F6, #60A5FA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .shadow-soft {
+            box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08);
+        }
+        .mask-fade-out {
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 glass border-b border-pale-blue dark:border-outline-variant shadow-sm transition-all duration-300 h-20 flex items-center">
+<div class="flex justify-between items-center px-gutter max-w-container-max mx-auto w-full">
+<div class="font-headline-sm text-headline-sm font-bold text-primary dark:text-white">OnlineWorkCentre</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-title-lg text-body-md text-on-surface-variant hover:text-primary transition-all" href="#methodology">Methodology</a>
+<a class="font-title-lg text-body-md text-on-surface-variant hover:text-primary transition-all" href="#services">Services</a>
+<a class="font-title-lg text-body-md text-on-surface-variant hover:text-primary transition-all" href="#industries">Industries</a>
+<a class="font-title-lg text-body-md text-on-surface-variant hover:text-primary transition-all" href="#insights">Insights</a>
+<a class="font-title-lg text-body-md text-on-surface-variant hover:text-primary transition-all" href="#company">Company</a>
+</div>
+<div class="flex items-center gap-4"><button id="theme-toggle" class="p-2 rounded-lg hover:bg-pale-blue transition-colors flex items-center justify-center text-on-surface-variant hover:text-primary" aria-label="Toggle Theme"><span class="material-symbols-outlined">dark_mode</span></button></div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center overflow-hidden bg-primary-container text-white">
+<!-- Shader and 3D Assets -->
+<!-- STITCH_SHADER_START:ANIMATION_4 class="absolute inset-0 w-full h-full opacity-40" -->
+<div class="absolute inset-0 w-full h-full opacity-40" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_4" style="display:block;width:100%;height:100%" width="1280" height="1024"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_4');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+varying vec2 v_texCoord;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec2 m = u_mouse / u_resolution;
+    
+    // Smooth flowing organic gradient
+    float color1 = sin(uv.x * 3.0 + u_time * 0.5) * 0.5 + 0.5;
+    float color2 = cos(uv.y * 4.0 - u_time * 0.3) * 0.5 + 0.5;
+    float noise = sin(uv.x * 10.0 + uv.y * 10.0 + u_time) * 0.1;
+    
+    vec3 baseColor = vec3(0.058, 0.09, 0.164); // Deep Navy #0F172A
+    vec3 accent1 = vec3(0.145, 0.388, 0.921);  // Blue #2563EB
+    vec3 accent2 = vec3(0.231, 0.51, 0.965);   // Blue Light #3B82F6
+    
+    vec3 finalColor = mix(baseColor, accent1, color1 * 0.4);
+    finalColor = mix(finalColor, accent2, color2 * 0.3);
+    finalColor += noise * 0.05;
+    
+    // Add a glow near the mouse
+    float dist = distance(uv, m);
+    finalColor += accent2 * (1.0 - smoothstep(0.0, 0.5, dist)) * 0.15;
+
+    gl_FragColor = vec4(finalColor, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_4 -->
+<!-- STITCH_THREEJS_START:ANIMATION_5 class="absolute inset-0 w-full h-full z-0 pointer-events-none" -->
+<div class="absolute inset-0 w-full h-full z-0 pointer-events-none" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_5" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_5');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  // Premium 3D Research Node Scene
+let scene, camera, renderer, nodes = [];
+const container = document.querySelector('.threejs-container') || document.body;
+
+function init() {
+    scene = new THREE.Scene();
+    const width = container.clientWidth || window.innerWidth;
+    const height = container.clientHeight || window.innerHeight;
+    
+    camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+    camera.position.z = 5;
+
+    renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    renderer.setSize(width, height);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    container.appendChild(renderer.domElement);
+
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    scene.add(ambientLight);
+
+    const pointLight = new THREE.PointLight(0x3B82F6, 2);
+    pointLight.position.set(5, 5, 5);
+    scene.add(pointLight);
+
+    // Create a network of floating spheres (AI nodes)
+    const geometry = new THREE.IcosahedronGeometry(0.1, 1);
+    const material = new THREE.MeshPhongMaterial({
+        color: 0x2563EB,
+        shininess: 100,
+        transparent: true,
+        opacity: 0.8
+    });
+
+    for(let i = 0; i < 20; i++) {
+        const mesh = new THREE.Mesh(geometry, material);
+        mesh.position.set(
+            (Math.random() - 0.5) * 6,
+            (Math.random() - 0.5) * 6,
+            (Math.random() - 0.5) * 4
+        );
+        mesh.userData.velocity = new THREE.Vector3(
+            (Math.random() - 0.5) * 0.01,
+            (Math.random() - 0.5) * 0.01,
+            (Math.random() - 0.5) * 0.01
+        );
+        scene.add(mesh);
+        nodes.push(mesh);
+    }
+
+    animate();
+}
+
+function animate() {
+    requestAnimationFrame(animate);
+    
+    nodes.forEach(node => {
+        node.position.add(node.userData.velocity);
+        if(Math.abs(node.position.x) > 3) node.userData.velocity.x *= -1;
+        if(Math.abs(node.position.y) > 3) node.userData.velocity.y *= -1;
+        node.rotation.x += 0.01;
+        node.rotation.y += 0.01;
+    });
+
+    renderer.render(scene, camera);
+}
+
+window.addEventListener('resize', () => {
+    const width = container.clientWidth || window.innerWidth;
+    const height = container.clientHeight || window.innerHeight;
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+    renderer.setSize(width, height);
+});
+
+init();
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_5 -->
+<div class="relative z-10 max-w-content-max mx-auto px-gutter text-center">
+<span class="inline-block px-4 py-1.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-md font-label-caps text-label-caps mb-8 tracking-widest uppercase">Research Transformed</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-8 leading-tight">
+                AI-Powered Research. <br>
+<span class="text-gradient">Human-Level Intelligence.</span> <br>
+                Business-Ready Outcomes.
+            </h1>
+<p class="font-body-lg text-body-lg text-white/70 max-w-2xl mx-auto mb-12">
+                At OnlineWorkCentre, we transform AI-generated chaos into structured intelligence that leaders can actually use. Combine the speed of silicon with the precision of strategy.
+            </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+<button class="w-full sm:w-auto px-8 py-4 bg-accent-blue hover:bg-blue-600 text-white rounded-xl font-semibold text-lg transition-all shadow-xl shadow-accent-blue/30 flex items-center justify-center gap-2">
+                    Submit Requirement
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="w-full sm:w-auto px-8 py-4 border border-white/20 hover:bg-white/10 text-white rounded-xl font-semibold text-lg transition-all">
+                    Book Discovery Call
+                </button>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</section>
+<!-- Trust Indicators (Counters) -->
+
+<!-- Why We Exist: Problem vs Solution -->
+<section class="py-section-gap-lg px-gutter max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md mb-4">The Gap We Were Built To Close</h2>
+<p class="text-slate-muted max-w-2xl mx-auto">The world doesn't lack information. It lacks clarity. Access to tools is not the same as access to intelligence.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+<!-- Problem Card -->
+<div class="p-10 rounded-3xl bg-surface-container-low border border-outline-variant/30 flex flex-col justify-between">
+<div>
+<h3 class="font-title-lg text-2xl mb-8 flex items-center gap-3">
+<span class="material-symbols-outlined text-error">cancel</span>
+                        The Problem
+                    </h3>
+<ul class="space-y-6">
+<li class="flex gap-4">
+<div class="bg-red-100 text-error p-2 rounded-lg h-fit">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+<div>
+<h4 class="font-semibold mb-1">Generic AI Outputs</h4>
+<p class="text-on-surface-variant">Decisions are made on false or incomplete assumptions from unverified prompts.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<div class="bg-red-100 text-error p-2 rounded-lg h-fit">
+<span class="material-symbols-outlined">reorder</span>
+</div>
+<div>
+<h4 class="font-semibold mb-1">Unstructured Data</h4>
+<p class="text-on-surface-variant">Leaders can't act on walls of unformatted, verbose AI text.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<div class="bg-red-100 text-error p-2 rounded-lg h-fit">
+<span class="material-symbols-outlined">hourglass_empty</span>
+</div>
+<div>
+<h4 class="font-semibold mb-1">Slow Intelligence</h4>
+<p class="text-on-surface-variant">Slower intelligence means slower execution and loss of competitive edge.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<!-- Solution Card -->
+<div class="p-10 rounded-3xl bg-primary text-white shadow-2xl relative overflow-hidden flex flex-col justify-between">
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-accent-blue/20 rounded-full blur-3xl"></div>
+<div class="relative z-10">
+<h3 class="font-title-lg text-2xl mb-8 flex items-center gap-3">
+<span class="material-symbols-outlined text-success">check_circle</span>
+                        The Solution
+                    </h3>
+<ul class="space-y-6">
+<li class="flex gap-4">
+<div class="bg-white/10 p-2 rounded-lg h-fit">
+<span class="material-symbols-outlined text-success">verified</span>
+</div>
+<div>
+<h4 class="font-semibold mb-1">Human-Validated Research</h4>
+<p class="text-white/70">Grounded in real sources and verified by subject matter experts.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<div class="bg-white/10 p-2 rounded-lg h-fit">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div>
+<h4 class="font-semibold mb-1">Professional Formats</h4>
+<p class="text-white/70">Ready-to-use documents built for immediate boardroom presentation.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<div class="bg-white/10 p-2 rounded-lg h-fit">
+<span class="material-symbols-outlined">speed</span>
+</div>
+<div>
+<h4 class="font-semibold mb-1">Decision-Ready Deliverables</h4>
+<p class="text-white/70">Strategic context that enables faster, deeper business moves.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="relative z-10 mt-12 p-6 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
+<p class="font-title-lg italic text-white/90">"We transform raw data into clarity for executive leadership."</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Industries Grid (Searchable Pattern) -->
+<section class="bg-surface-container-low py-section-gap-lg" id="industries">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
+<div>
+<h2 class="font-headline-md text-headline-md mb-2">150+ Industries Served</h2>
+<p class="text-slate-muted">If your sector exists, we research it. From frontier tech to legacy markets.</p>
+</div>
+<div class="relative w-full md:w-80">
+<input class="w-full pl-12 pr-4 py-3 rounded-xl border-border-light focus:ring-accent-blue focus:border-accent-blue transition-all bg-white" placeholder="Search your industry..." type="text">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-muted">search</span>
+</div>
+</div>
+<!-- Bento Grid Industries -->
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 h-[600px] overflow-hidden relative group">
+<!-- Sample Industry Cards -->
+<div class="bg-white p-6 rounded-2xl border border-pale-blue shadow-soft hover:-translate-y-1 transition-all flex flex-col items-center justify-center text-center group/card">
+<span class="material-symbols-outlined text-accent-blue mb-3 text-3xl">payments</span>
+<span class="font-semibold text-on-surface">FinTech</span>
+</div>
+<div class="bg-white p-6 rounded-2xl border border-pale-blue shadow-soft hover:-translate-y-1 transition-all flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-accent-blue mb-3 text-3xl">science</span>
+<span class="font-semibold text-on-surface">Pharma</span>
+</div>
+<div class="bg-white p-6 rounded-2xl border border-pale-blue shadow-soft hover:-translate-y-1 transition-all flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-accent-blue mb-3 text-3xl">factory</span>
+<span class="font-semibold text-on-surface">Manufacturing</span>
+</div>
+<div class="bg-white p-6 rounded-2xl border border-pale-blue shadow-soft hover:-translate-y-1 transition-all flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-accent-blue mb-3 text-3xl">smart_toy</span>
+<span class="font-semibold text-on-surface">AI &amp; Robotics</span>
+</div>
+<div class="bg-white p-6 rounded-2xl border border-pale-blue shadow-soft hover:-translate-y-1 transition-all flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-accent-blue mb-3 text-3xl">bolt</span>
+<span class="font-semibold text-on-surface">Energy</span>
+</div>
+<div class="bg-white p-6 rounded-2xl border border-pale-blue shadow-soft hover:-translate-y-1 transition-all flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-accent-blue mb-3 text-3xl">shopping_cart</span>
+<span class="font-semibold text-on-surface">E-Commerce</span>
+</div>
+<!-- Many more would be here -->
+<div class="col-span-full absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent pointer-events-none flex items-end justify-center pb-8">
+<button class="bg-white border border-border-light px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-pale-blue transition-all pointer-events-auto">View All 150+ Industries</button>
+</div>
+</div>
+</div>
+</section>
+<!-- How We Work: Horizontal Timeline -->
+<section class="py-section-gap-lg max-w-container-max mx-auto px-gutter overflow-hidden">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md mb-2">How We Work</h2>
+<p class="text-slate-muted">A structured 5-step process from question to decision-ready output.</p>
+</div>
+<div class="relative">
+<!-- Connector Line -->
+<div class="absolute top-1/2 left-0 w-full h-0.5 bg-pale-blue -translate-y-1/2 hidden md:block"></div>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-12 relative z-10">
+<!-- Step 1 -->
+<div class="text-center group">
+<div class="w-16 h-16 rounded-full bg-white border-2 border-primary flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform bg-white relative">
+<span class="font-bold">01</span>
+</div>
+<h3 class="font-semibold mb-2">Requirement</h3>
+<p class="text-sm text-slate-muted">Share your objective or research question.</p>
+</div>
+<!-- Step 2 -->
+<div class="text-center group">
+<div class="w-16 h-16 rounded-full bg-white border-2 border-primary flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform bg-white">
+<span class="font-bold">02</span>
+</div>
+<h3 class="font-semibold mb-2">Scope</h3>
+<p class="text-sm text-slate-muted">We define sources, structure, and format.</p>
+</div>
+<!-- Step 3 -->
+<div class="text-center group">
+<div class="w-16 h-16 rounded-full bg-white border-2 border-primary flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform bg-white">
+<span class="font-bold">03</span>
+</div>
+<h3 class="font-semibold mb-2">AI Discovery</h3>
+<p class="text-sm text-slate-muted">Advanced AI collects and synthesizes data.</p>
+</div>
+<!-- Step 4 -->
+<div class="text-center group">
+<div class="w-16 h-16 rounded-full bg-white border-2 border-primary flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform bg-white">
+<span class="font-bold">04</span>
+</div>
+<h3 class="font-semibold mb-2">Validation</h3>
+<p class="text-sm text-slate-muted">Analysts verify and enrich findings.</p>
+</div>
+<!-- Step 5 -->
+<div class="text-center group">
+<div class="w-16 h-16 rounded-full bg-primary text-white border-2 border-primary flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+<span class="font-bold">05</span>
+</div>
+<h3 class="font-semibold mb-2">Delivery</h3>
+<p class="text-sm text-slate-muted">Presentation-ready report delivered.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Methodology: HILAR -->
+<section class="bg-white py-section-gap-lg" id="methodology">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div>
+<span class="font-label-caps text-accent-blue tracking-widest mb-4 block">PROPRIETARY ENGINE</span>
+<h2 class="font-headline-md text-headline-md mb-6">Human-in-the-Loop AI Research (HILAR)</h2>
+<p class="text-body-lg text-slate-muted mb-8">We don't just run prompts. Every output passes through structured human validation before it reaches you. Speed without sacrificing accuracy.</p>
+<div class="space-y-4">
+<div class="flex items-start gap-4 p-4 rounded-xl hover:bg-pale-blue transition-colors border border-transparent hover:border-pale-blue">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: &quot;FILL&quot; 1;">bolt</span>
+<div>
+<h4 class="font-bold">AI Speed</h4>
+<p class="text-sm text-slate-muted">Research that takes weeks delivered in 24-72 hours.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 rounded-xl hover:bg-pale-blue transition-colors border border-transparent hover:border-pale-blue">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: &quot;FILL&quot; 1;">verified_user</span>
+<div>
+<h4 class="font-bold">Human Accuracy</h4>
+<p class="text-sm text-slate-muted">Every finding verified before it reaches your desk.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="overflow-hidden rounded-3xl shadow-soft border border-pale-blue bg-white">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-lowest">
+<tr>
+<th class="p-5 font-label-caps text-slate-muted border-b border-pale-blue">Phase</th>
+<th class="p-5 font-label-caps text-slate-muted border-b border-pale-blue">Outcome</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-pale-blue">
+<tr>
+<td class="p-5">
+<div class="font-bold">Scope Definition</div>
+<div class="text-xs text-slate-muted mt-1">Translated brief</div>
+</td>
+<td class="p-5 text-sm">Prevents scope creep and ensures the right question is answered.</td>
+</tr>
+<tr>
+<td class="p-5">
+<div class="font-bold">AI-Augmented Discovery</div>
+<div class="text-xs text-slate-muted mt-1">Massive data scrape</div>
+</td>
+<td class="p-5 text-sm">Covers more ground in hours than a human team in weeks.</td>
+</tr>
+<tr>
+<td class="p-5">
+<div class="font-bold">Expert Filtering</div>
+<div class="text-xs text-slate-muted mt-1">Contextual depth</div>
+</td>
+<td class="p-5 text-sm">Eliminates hallucinations and generic outputs.</td>
+</tr>
+<tr>
+<td class="p-5">
+<div class="font-bold">Strategic Synthesis</div>
+<div class="text-xs text-slate-muted mt-1">Intelligence transformation</div>
+</td>
+<td class="p-5 text-sm">Actionable analysis tailored to your specific decision context.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<!-- Deliverables Grid -->
+<section class="py-section-gap-lg bg-surface-container-lowest" id="services">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md mb-2">Professional Deliverables</h2>
+<p class="text-slate-muted">Every engagement produces structured, formatted, and presentation-ready outputs.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Deliverable 1 -->
+<div class="p-6 rounded-2xl border border-pale-blue hover:shadow-soft hover:bg-pale-blue/30 transition-all group">
+<div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center mb-6 text-white group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">menu_book</span>
+</div>
+<h3 class="font-bold mb-2">Research Reports</h3>
+<p class="text-sm text-slate-muted">Deep-dive documents with structured findings and data analysis.</p>
+</div>
+<!-- Deliverable 2 -->
+<div class="p-6 rounded-2xl border border-pale-blue hover:shadow-soft hover:bg-pale-blue/30 transition-all group">
+<div class="w-12 h-12 rounded-xl bg-accent-blue flex items-center justify-center mb-6 text-white group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">summarize</span>
+</div>
+<h3 class="font-bold mb-2">Executive Summaries</h3>
+<p class="text-sm text-slate-muted">Concise leadership-ready briefs for fast decision-making.</p>
+</div>
+<!-- Deliverable 3 -->
+<div class="p-6 rounded-2xl border border-pale-blue hover:shadow-soft hover:bg-pale-blue/30 transition-all group">
+<div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center mb-6 text-white group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<h3 class="font-bold mb-2">Strategy Decks</h3>
+<p class="text-sm text-slate-muted">Slide-ready presentations with visual structure and charts.</p>
+</div>
+<!-- Deliverable 4 -->
+<div class="p-6 rounded-2xl border border-pale-blue hover:shadow-soft hover:bg-pale-blue/30 transition-all group">
+<div class="w-12 h-12 rounded-xl bg-accent-blue flex items-center justify-center mb-6 text-white group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">query_stats</span>
+</div>
+<h3 class="font-bold mb-2">Market Intelligence</h3>
+<p class="text-sm text-slate-muted">Sector analysis with sizing, trends, and competitive dynamics.</p>
+</div>
+<!-- More would be added here to reach the 16 types from document -->
+</div>
+<div class="mt-12 text-center">
+<button class="font-title-lg text-primary underline underline-offset-4 hover:text-accent-blue transition-colors">Explore All 16 Deliverable Types</button>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-section-gap-lg bg-background">
+<div class="max-w-content-max mx-auto px-gutter">
+<h2 class="font-headline-md text-headline-md text-center mb-12">Frequently Asked Questions</h2>
+<div class="space-y-4">
+<!-- FAQ Item 1 -->
+<div class="bg-white rounded-2xl border border-pale-blue overflow-hidden">
+<button class="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-pale-blue transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden')">
+<span class="font-bold">What makes OnlineWorkCentre different from other research firms?</span>
+<span class="material-symbols-outlined">expand_more</span>
+</button>
+<div class="px-8 pb-6 text-slate-muted hidden">
+                        We sit at the intersection of AI speed and human judgment. Most research firms are slow; most AI tools are unstructured. We combine both - delivering research that is fast, verified, and professionally formatted.
+                    </div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="bg-white rounded-2xl border border-pale-blue overflow-hidden">
+<button class="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-pale-blue transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden')">
+<span class="font-bold">How long does it take to receive a report?</span>
+<span class="material-symbols-outlined">expand_more</span>
+</button>
+<div class="px-8 pb-6 text-slate-muted hidden">
+                        Standard reports are typically delivered within 24-72 hours. Complex multi-source research engagements may take 3-7 business days. We are transparent about timelines at the start.
+                    </div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="bg-white rounded-2xl border border-pale-blue overflow-hidden">
+<button class="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-pale-blue transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden')">
+<span class="font-bold">Is my research requirement kept confidential?</span>
+<span class="material-symbols-outlined">expand_more</span>
+</button>
+<div class="px-8 pb-6 text-slate-muted hidden">
+                        Absolutely. All client engagements are treated with full confidentiality. We do not share, resell, or publish any client-specific research. Your intelligence belongs exclusively to you.
+                    </div>
+</div>
+</div>
+<div class="mt-8 text-center text-sm text-slate-muted">
+                Has a question not listed here? <a class="text-primary font-semibold underline" href="#">Book a free discovery call</a>.
+            </div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-section-gap-lg px-gutter">
+<div class="max-w-container-max mx-auto rounded-[2.5rem] bg-gradient-to-br from-primary to-primary-container text-white p-12 md:p-20 relative overflow-hidden text-center">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-accent-blue/20 via-transparent to-transparent"></div>
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-8 relative z-10">Ready to Make Better Decisions?</h2>
+<p class="text-body-lg text-white/70 max-w-2xl mx-auto mb-12 relative z-10">Stop drowning in noise. Start leveraging intelligence built for the boardroom. Join enterprises and consultants using OnlineWorkCentre.</p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6 relative z-10">
+<button class="bg-white text-primary px-10 py-5 rounded-2xl font-bold text-lg hover:bg-pale-blue transition-all shadow-2xl">Submit Requirement</button>
+<button class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all">Book Free Discussion</button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-border-light pt-section-gap-lg pb-12 relative w-full">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-gutter max-w-container-max mx-auto">
+<div class="space-y-6">
+<div class="font-headline-sm text-headline-sm font-bold text-primary">OnlineWorkCentre</div>
+<p class="text-slate-muted text-sm leading-relaxed">AI-powered research and intelligence for organizations that need clarity, not noise.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-pale-blue flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-sm">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-pale-blue flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-sm">alternate_email</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-label-caps text-slate-muted mb-6 tracking-widest uppercase">Navigation</h4>
+<ul class="space-y-4">
+<li class=""><a class="text-sm hover:text-primary hover:translate-x-1 transition-all inline-block" href="#">Home</a></li>
+<li class=""><a class="text-sm hover:text-primary hover:translate-x-1 transition-all inline-block" href="#">About Us</a></li>
+<li class=""><a class="text-sm hover:text-primary hover:translate-x-1 transition-all inline-block" href="#">Industries</a></li>
+<li class=""><a class="text-sm hover:text-primary hover:translate-x-1 transition-all inline-block" href="#">Services</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-slate-muted mb-6 tracking-widest uppercase">Support</h4>
+<ul class="space-y-4">
+<li class=""><a class="text-sm hover:text-primary hover:translate-x-1 transition-all inline-block" href="#">How It Works</a></li>
+<li class=""><a class="text-sm hover:text-primary hover:translate-x-1 transition-all inline-block" href="#">Deliverables</a></li>
+<li class=""><a class="text-sm hover:text-primary hover:translate-x-1 transition-all inline-block" href="#">FAQ</a></li>
+<li class=""><a class="text-sm hover:text-primary hover:translate-x-1 transition-all inline-block" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-slate-muted mb-6 tracking-widest uppercase">Get Started</h4>
+<ul class="space-y-4">
+<li class=""><a class="text-sm font-semibold text-primary hover:underline" href="#">Submit Requirement</a></li>
+<li class=""><a class="text-sm font-semibold text-primary hover:underline" href="#">Book Discovery Call</a></li>
+<li class=""><a class="text-sm font-semibold text-primary hover:underline" href="#">Request Sample</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter mt-20 pt-8 border-t border-pale-blue flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-muted">
+<p class="">© 2024 OnlineWorkCentre. All rights reserved. Powered by HILAR Methodology.</p>
+<div class="flex gap-6">
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+<a class="hover:text-primary" href="#">Terms of Service</a>
+<a class="hover:text-primary" href="#">Security</a>
+<a class="hover:text-primary" href="#">Cookie Settings</a>
+</div>
+</div>
+</footer>
+<!-- FAB (Suppressed on Landing but here for utility if needed) -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-accent-blue text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform z-40 group">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="absolute right-full mr-4 bg-white text-primary px-4 py-2 rounded-lg text-sm font-bold shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Talk to an Analyst</span>
+</button>
+<script>
+        // Navbar scroll effect
+        window.onscroll = function() {
+            const nav = document.querySelector('nav');
+            if (window.pageYOffset > 50) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        };
+
+        // Smooth counter animation (Simplified)
+        function animateValue(id, start, end, duration) {
+            let obj = document.getElementById(id);
+            if(!obj) return;
+            let range = end - start;
+            let current = start;
+            let increment = end > start ? 1 : -1;
+            let stepTime = Math.abs(Math.floor(duration / range));
+            let timer = setInterval(function() {
+                current += increment;
+                obj.innerText = current + (id === 'counter-industries' ? '+' : '');
+                if (current == end) {
+                    clearInterval(timer);
+                }
+            }, stepTime);
+        }
+        
+        // Trigger counters when in view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateValue("counter-industries", 0, 150, 2000);
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+        
+        const counterSection = document.getElementById('counter-industries');
+        if(counterSection) observer.observe(counterSection);
+    </script>
+
+
+<script>
+const themeToggle = document.getElementById('theme-toggle');
+const html = document.documentElement;
+const icon = themeToggle.querySelector('.material-symbols-outlined');
+
+themeToggle.addEventListener('click', () => {
+    html.classList.toggle('dark');
+    const isDark = html.classList.contains('dark');
+    icon.textContent = isDark ? 'light_mode' : 'dark_mode';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+});
+
+if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    html.classList.add('dark');
+    icon.textContent = 'light_mode';
+} else {
+    html.classList.remove('dark');
+    icon.textContent = 'dark_mode';
+}
+</script>
+
+</body></html>

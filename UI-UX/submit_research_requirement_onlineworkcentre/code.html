@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Submit Research Requirement - OnlineWorkCentre</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Sora:wght@400;600;700&amp;family=Space+Grotesk:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#003ea8",
+                        "primary-fixed": "#dae2fd",
+                        "tertiary": "#000000",
+                        "secondary-fixed-dim": "#b4c5ff",
+                        "tertiary-container": "#2a1700",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#d8dadc",
+                        "outline-variant": "#c6c6cd",
+                        "surface-container-high": "#e6e8ea",
+                        "secondary-fixed": "#dbe1ff",
+                        "border-slate": "#CBD5E1",
+                        "primary": "#000000",
+                        "secondary": "#0051d5",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#ffddb8",
+                        "surface-container-low": "#f2f4f6",
+                        "error-container": "#ffdad6",
+                        "success-emerald": "#10B981",
+                        "on-surface-variant": "#45464d",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#fefcff",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-container-highest": "#e0e3e5",
+                        "dark-navy": "#0B1120",
+                        "background": "#f7f9fb",
+                        "on-primary-fixed": "#131b2e",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "surface": "#f7f9fb",
+                        "on-primary-container": "#7c839b",
+                        "surface-glass": "rgba(255, 255, 255, 0.7)",
+                        "on-secondary-fixed": "#00174b",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "primary-container": "#131b2e",
+                        "on-background": "#191c1e",
+                        "inverse-primary": "#bec6e0",
+                        "on-tertiary-fixed": "#2a1700",
+                        "inverse-surface": "#2d3133",
+                        "on-tertiary-container": "#b87500",
+                        "surface-container": "#eceef0",
+                        "text-muted": "#64748B",
+                        "surface-variant": "#e0e3e5",
+                        "outline": "#76777d",
+                        "on-surface": "#191c1e",
+                        "surface-tint": "#565e74",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#316bf3",
+                        "surface-bright": "#f7f9fb",
+                        "surface-container-lowest": "#ffffff",
+                        "accent-blue": "#3B82F6",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "section-gap-lg": "120px",
+                        "margin-mobile": "20px",
+                        "section-gap-md": "80px",
+                        "stack-md": "24px",
+                        "gutter": "32px",
+                        "stack-sm": "12px",
+                        "stack-lg": "48px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "label-lg": ["Sora"],
+                        "body-md": ["Inter"],
+                        "display-lg-mobile": ["Space Grotesk"],
+                        "headline-xl": ["Space Grotesk"],
+                        "headline-lg": ["Space Grotesk"],
+                        "label-md": ["Sora"],
+                        "display-lg": ["Space Grotesk"],
+                        "body-sm": ["Inter"],
+                        "headline-md": ["Space Grotesk"],
+                        "button-text": ["Sora"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-lg": ["14px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "1", "letterSpacing": "0.03em", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "button-text": ["15px", { "lineHeight": "1", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Floating Label Styles */
+        .floating-input:focus ~ .floating-label,
+        .floating-input:not(:placeholder-shown) ~ .floating-label {
+            transform: translateY(-1.5rem) scale(0.85);
+            color: #0051d5; /* secondary color */
+        }
+        .dark .floating-input:focus ~ .floating-label,
+        .dark .floating-input:not(:placeholder-shown) ~ .floating-label {
+            color: #b4c5ff; /* secondary-fixed-dim */
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background dark:bg-dark-navy dark:text-surface-lowest font-body-md transition-colors duration-300">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface-glass backdrop-blur-xl dark:bg-dark-navy/70 border-b border-outline-variant/30 dark:border-white/10 shadow-sm transition-all duration-300">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-gutter max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed" href="#">OnlineWorkCentre</a>
+<div class="hidden md:flex space-x-8">
+<a class="font-label-lg text-label-lg text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Methodology</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Services</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Industries</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Insights</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Company</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="p-2 text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed transition-colors scale-95 active:scale-90 rounded-full hover:bg-surface-variant dark:hover:bg-surface-tint" id="theme-toggle">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="pt-32 pb-section-gap-lg px-margin-mobile md:px-gutter max-w-container-max mx-auto">
+<!-- Header Section -->
+<div class="text-center mb-12 max-w-3xl mx-auto">
+<div class="inline-flex items-center space-x-2 bg-secondary/10 dark:bg-secondary/20 text-secondary dark:text-secondary-fixed-dim px-4 py-1.5 rounded-full font-label-md mb-6">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary dark:bg-secondary-fixed-dim"></span>
+<span>Research Engagement</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary dark:text-white mb-6">Submit Your Intelligence<br/>Requirement</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant dark:text-outline-variant">Brief us on your strategic challenge. Our HILAR methodology ensures rapid, high-accuracy intelligence delivery.</p>
+</div>
+<!-- Form Container -->
+<div class="max-w-4xl mx-auto bg-surface-container-lowest dark:bg-surface-tint/20 rounded-3xl p-6 md:p-12 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),0_10px_15px_-3px_rgba(0,0,0,0.05)] dark:shadow-[0_0_20px_rgba(59,130,246,0.05)] border border-border-slate/50 dark:border-white/5 relative overflow-hidden">
+<!-- Form Element -->
+<form class="space-y-stack-lg relative z-10" id="research-form">
+<!-- Section 1: Intent -->
+<div class="space-y-stack-md">
+<h2 class="font-headline-md text-headline-md text-primary dark:text-white border-b border-border-slate/30 dark:border-white/10 pb-4">1. Research Intent</h2>
+<p class="text-sm text-on-surface-variant dark:text-outline-variant">Help us understand the domain and depth of your request.</p>
+<div class="grid grid-cols-1 gap-6">
+<!-- Industry / Sector -->
+<div class="relative">
+<select class="block w-full px-4 pt-6 pb-2 text-on-surface dark:text-white bg-transparent border-1.5 border-border-slate dark:border-outline-variant rounded-lg appearance-none focus:outline-none focus:ring-0 focus:border-secondary dark:focus:border-secondary-fixed-dim peer floating-input" id="industry">
+<option disabled="" selected="" value=""></option>
+<option value="tech">Technology &amp; AI</option>
+<option value="finance">Financial Services</option>
+<option value="healthcare">Healthcare &amp; Pharma</option>
+<option value="manufacturing">Manufacturing</option>
+<option value="other">Other</option>
+</select>
+<label class="absolute text-on-surface-variant dark:text-outline-variant duration-300 transform -translate-y-1.5 scale-85 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-85 peer-focus:-translate-y-1.5 font-label-lg floating-label pointer-events-none" for="industry">Industry / Sector *</label>
+<div class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none text-on-surface-variant dark:text-outline-variant">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+<!-- Research Requirement -->
+<div class="relative">
+<textarea class="block w-full px-4 pt-6 pb-2 text-on-surface dark:text-white bg-transparent border-1.5 border-border-slate dark:border-outline-variant rounded-lg focus:outline-none focus:ring-0 focus:border-secondary dark:focus:border-secondary-fixed-dim peer floating-input resize-none" id="requirement" placeholder=" " rows="5"></textarea>
+<label class="absolute text-on-surface-variant dark:text-outline-variant duration-300 transform -translate-y-1.5 scale-85 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-85 peer-focus:-translate-y-1.5 font-label-lg floating-label pointer-events-none" for="requirement">Your Research Requirement *</label>
+<div class="flex justify-between mt-2 text-xs text-text-muted dark:text-outline-variant">
+<span>Minimum 20 characters</span>
+<span id="char-count">0/2000</span>
+</div>
+</div>
+<!-- Output Format -->
+<div class="relative">
+<select class="block w-full px-4 pt-6 pb-2 text-on-surface dark:text-white bg-transparent border-1.5 border-border-slate dark:border-outline-variant rounded-lg appearance-none focus:outline-none focus:ring-0 focus:border-secondary dark:focus:border-secondary-fixed-dim peer floating-input" id="format">
+<option disabled="" selected="" value=""></option>
+<option value="report">Comprehensive Report</option>
+<option value="summary">Executive Summary</option>
+<option value="data">Raw Data &amp; Analysis</option>
+<option value="presentation">Presentation Deck</option>
+</select>
+<label class="absolute text-on-surface-variant dark:text-outline-variant duration-300 transform -translate-y-1.5 scale-85 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-85 peer-focus:-translate-y-1.5 font-label-lg floating-label pointer-events-none" for="format">Desired Output Format *</label>
+<div class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none text-on-surface-variant dark:text-outline-variant">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 2: Contact -->
+<div class="space-y-stack-md">
+<h2 class="font-headline-md text-headline-md text-primary dark:text-white border-b border-border-slate/30 dark:border-white/10 pb-4">2. Contact Details</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Full Name -->
+<div class="relative">
+<input class="block w-full px-4 pt-6 pb-2 text-on-surface dark:text-white bg-transparent border-1.5 border-border-slate dark:border-outline-variant rounded-lg focus:outline-none focus:ring-0 focus:border-secondary dark:focus:border-secondary-fixed-dim peer floating-input" id="fullname" placeholder=" " type="text"/>
+<label class="absolute text-on-surface-variant dark:text-outline-variant duration-300 transform -translate-y-1.5 scale-85 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-85 peer-focus:-translate-y-1.5 font-label-lg floating-label pointer-events-none" for="fullname">Full Name *</label>
+</div>
+<!-- Organization -->
+<div class="relative">
+<input class="block w-full px-4 pt-6 pb-2 text-on-surface dark:text-white bg-transparent border-1.5 border-border-slate dark:border-outline-variant rounded-lg focus:outline-none focus:ring-0 focus:border-secondary dark:focus:border-secondary-fixed-dim peer floating-input" id="organization" placeholder=" " type="text"/>
+<label class="absolute text-on-surface-variant dark:text-outline-variant duration-300 transform -translate-y-1.5 scale-85 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-85 peer-focus:-translate-y-1.5 font-label-lg floating-label pointer-events-none" for="organization">Organization *</label>
+</div>
+<!-- Work Email -->
+<div class="relative">
+<input class="block w-full px-4 pt-6 pb-2 text-on-surface dark:text-white bg-transparent border-1.5 border-border-slate dark:border-outline-variant rounded-lg focus:outline-none focus:ring-0 focus:border-secondary dark:focus:border-secondary-fixed-dim peer floating-input" id="email" placeholder=" " type="email"/>
+<label class="absolute text-on-surface-variant dark:text-outline-variant duration-300 transform -translate-y-1.5 scale-85 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-85 peer-focus:-translate-y-1.5 font-label-lg floating-label pointer-events-none" for="email">Work Email *</label>
+</div>
+<!-- Phone -->
+<div class="relative">
+<input class="block w-full px-4 pt-6 pb-2 text-on-surface dark:text-white bg-transparent border-1.5 border-border-slate dark:border-outline-variant rounded-lg focus:outline-none focus:ring-0 focus:border-secondary dark:focus:border-secondary-fixed-dim peer floating-input" id="phone" placeholder=" " type="tel"/>
+<label class="absolute text-on-surface-variant dark:text-outline-variant duration-300 transform -translate-y-1.5 scale-85 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-85 peer-focus:-translate-y-1.5 font-label-lg floating-label pointer-events-none" for="phone">Phone Number</label>
+</div>
+</div>
+</div>
+<!-- Ethics & Submit -->
+<div class="space-y-6 pt-4 border-t border-border-slate/30 dark:border-white/10">
+<!-- Ethics Disclaimer -->
+<div class="bg-tertiary-fixed/30 dark:bg-tertiary-container/30 border border-tertiary-fixed-dim/50 rounded-xl p-4 flex gap-4">
+<span class="material-symbols-outlined text-tertiary-container dark:text-tertiary-fixed-dim mt-0.5">warning</span>
+<div>
+<h4 class="font-label-md text-tertiary-container dark:text-tertiary-fixed-dim uppercase tracking-wider mb-1">Research Ethics Protocol</h4>
+<p class="text-sm text-on-surface-variant dark:text-outline-variant">We do not undertake research that facilitates harmful activity, discrimination, or privacy violations. Submissions are reviewed for compliance before engagement.</p>
+</div>
+</div>
+<!-- Consent Checkbox -->
+<label class="flex items-start gap-3 cursor-pointer group">
+<div class="relative flex items-center mt-1">
+<input class="peer sr-only" id="consent" type="checkbox"/>
+<div class="w-5 h-5 border-2 border-border-slate dark:border-outline-variant rounded bg-transparent peer-checked:bg-secondary peer-checked:border-secondary transition-colors"></div>
+<span class="material-symbols-outlined absolute inset-0 text-white opacity-0 peer-checked:opacity-100 pointer-events-none text-[20px] leading-[20px]">check</span>
+</div>
+<span class="text-sm text-on-surface-variant dark:text-outline-variant leading-relaxed">I agree to the Terms of Service and Privacy Policy, and consent to my data being processed for this inquiry.</span>
+</label>
+<!-- Submit Button -->
+<div class="flex justify-end pt-4">
+<button class="bg-primary text-white dark:bg-white dark:text-primary px-8 py-4 rounded-lg font-button-text flex items-center gap-2 hover:opacity-90 transition-opacity hover:shadow-[0_4px_12px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_4px_12px_rgba(255,255,255,0.2)]" type="submit">
+                            Submit Requirement
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</form>
+<!-- Success State (Hidden by default) -->
+<div class="hidden absolute inset-0 bg-surface-container-lowest dark:bg-dark-navy z-20 flex flex-col items-center justify-center text-center p-8" id="success-state">
+<div class="w-20 h-20 bg-success-emerald/10 rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-4xl text-success-emerald">check_circle</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary dark:text-white mb-4">Requirement Submitted</h2>
+<p class="text-on-surface-variant dark:text-outline-variant max-w-md mb-8">Your intelligence requirement has been securely received. An analyst will review your submission and contact you within 24 hours.</p>
+<button class="border-2 border-border-slate dark:border-outline-variant text-primary dark:text-white px-6 py-3 rounded-lg font-button-text hover:bg-surface-variant dark:hover:bg-surface-tint transition-colors" onclick="resetForm()">
+                    Submit Another Request
+                </button>
+</div>
+</div>
+<!-- Trust Badges -->
+<div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+<div class="bg-surface-container-lowest dark:bg-surface-tint/10 rounded-xl p-4 flex items-center gap-3 border border-border-slate/30 dark:border-white/5">
+<span class="material-symbols-outlined text-secondary dark:text-secondary-fixed-dim">verified_user</span>
+<span class="font-label-md text-primary dark:text-white">100% CONFIDENTIAL</span>
+</div>
+<div class="bg-surface-container-lowest dark:bg-surface-tint/10 rounded-xl p-4 flex items-center gap-3 border border-border-slate/30 dark:border-white/5">
+<span class="material-symbols-outlined text-secondary dark:text-secondary-fixed-dim">timer</span>
+<span class="font-label-md text-primary dark:text-white">24-72HR RESPONSE</span>
+</div>
+<div class="bg-surface-container-lowest dark:bg-surface-tint/10 rounded-xl p-4 flex items-center gap-3 border border-border-slate/30 dark:border-white/5">
+<span class="material-symbols-outlined text-secondary dark:text-secondary-fixed-dim">public</span>
+<span class="font-label-md text-primary dark:text-white">GLOBAL DOMAIN</span>
+</div>
+<div class="bg-surface-container-lowest dark:bg-surface-tint/10 rounded-xl p-4 flex items-center gap-3 border border-border-slate/30 dark:border-white/5">
+<span class="material-symbols-outlined text-secondary dark:text-secondary-fixed-dim">psychology</span>
+<span class="font-label-md text-primary dark:text-white">HILAR METHOD</span>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-dark-navy w-full py-section-gap-md border-t border-outline-variant/30 dark:border-white/10">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed mb-4 block">OnlineWorkCentre</span>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-stack-lg">
+<div>
+<h5 class="font-label-lg mb-4 text-primary dark:text-white">Company</h5>
+<ul class="space-y-3 font-body-sm text-body-sm">
+<li><a class="text-text-muted dark:text-outline-variant hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors block hover:translate-x-1 duration-200" href="#">About Us</a></li>
+<li><a class="text-text-muted dark:text-outline-variant hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors block hover:translate-x-1 duration-200" href="#">Careers</a></li>
+<li><a class="text-text-muted dark:text-outline-variant hover:text-secondary dark:hover:text-secondary-fixed-dim transition-colors block hover:translate-x-1 duration-200" href="#">Global Offices</a></li>
+</ul>
+</div>
+<!-- Add other footer columns as needed following the same pattern -->
+</div>
+<div class="mt-12 pt-8 border-t border-outline-variant/30 dark:border-white/10 text-center font-body-sm text-text-muted dark:text-outline-variant">
+                © 2024 OnlineWorkCentre. All rights reserved. Powered by HILAR Methodology.
+            </div>
+</div>
+</footer>
+<script>
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const icon = themeToggle.querySelector('span');
+            icon.textContent = html.classList.contains('dark') ? 'light_mode' : 'dark_mode';
+        });
+
+        // Character Count Logic
+        const reqInput = document.getElementById('requirement');
+        const charCount = document.getElementById('char-count');
+        
+        reqInput.addEventListener('input', () => {
+            const count = reqInput.value.length;
+            charCount.textContent = `${count}/2000`;
+            if (count > 2000) {
+                charCount.classList.add('text-error');
+            } else {
+                charCount.classList.remove('text-error');
+            }
+        });
+
+        // Form Submit Logic
+        const form = document.getElementById('research-form');
+        const successState = document.getElementById('success-state');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Basic validation check (html5 handles most of it, but ensure consent)
+            if(!document.getElementById('consent').checked) {
+                alert("Please agree to the Terms of Service.");
+                return;
+            }
+            
+            // Show success state
+            form.style.opacity = '0';
+            setTimeout(() => {
+                successState.classList.remove('hidden');
+            }, 300);
+        });
+
+        function resetForm() {
+            form.reset();
+            successState.classList.add('hidden');
+            form.style.opacity = '1';
+            charCount.textContent = '0/2000';
+        }
+    </script>
+</body></html>
